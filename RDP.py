@@ -36,6 +36,7 @@ class RDP:
         self.install_crd()
         self.install_desktop_environment()
         self.install_firefox()
+        self.install_obs()
         self.finish(self.code)
         print("\nRDP created succesfully move to https://remotedesktop.google.com/access")
 
@@ -75,6 +76,15 @@ class RDP:
 
         l.stop()
 
+        @staticmethod
+    def install_obs():
+        l = Loading("OBS-Studio")
+        l.start()
+
+        system("sudo apt install -y obs-studio &> /dev/null")
+
+        l.stop()
+        
     @staticmethod
     def finish(crp):
         system("%s &> /dev/null" % (crp))
