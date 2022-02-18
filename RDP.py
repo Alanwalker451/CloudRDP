@@ -76,7 +76,7 @@ class RDP:
 
         l.stop()
 
-        @staticmethod
+    @staticmethod
     def install_obs():
         l = Loading("OBS-Studio")
         l.start()
